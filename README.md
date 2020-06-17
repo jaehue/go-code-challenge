@@ -1,8 +1,48 @@
 # Go coding skill 1
 
 
-https://github.com/Blur-Consulting/prismpop-api/tree/code-challenge (private repository)
-![](code_challenge.png)
+Implement `AddProductToPost`, `RemoveProductFromPost` function to make these tests pass.
+
+## Red state(Error)
+```
+$ go test ./models -v -test.run TestPost$
+=== RUN   TestPost
+=== RUN   TestPost/AddProductToPost
+    TestPost/AddProductToPost: post_test.go:36:
+                Error Trace:    post_test.go:36
+                Error:          Not equal:
+                                expected: 0
+                                actual  : 3
+                Test:           TestPost/AddProductToPost
+--- FAIL: TestPost (0.01s)
+    --- FAIL: TestPost/AddProductToPost (0.00s)
+...
+```
+
+## Green state(Tests Pass)
+```
+go test ./models -v -test.run TestPost$
+=== RUN   TestPost
+=== RUN   TestPost/AddProductToPost
+=== RUN   TestPost/RemoveProductFromPost
+--- PASS: TestPost (0.01s)
+    --- PASS: TestPost/AddProductToPost (0.00s)
+    --- PASS: TestPost/RemoveProductFromPost (0.00s)
+PASS
+ok      github.com/Blur-Consulting/prismpop-api/models  8.452s
+```
+
+## Code to implement:
+`models/post.go` 66 line
+```golang
+func RemoveProductFromPost(ctx context.Context, postId int64, productIds []int64) error {
+	return nil
+}
+
+func AddProductToPost(ctx context.Context, postId int64, productIds []int64) ([]Product, error) {
+	return nil, nil
+}
+```
 
 
 # Go coding skill 2
